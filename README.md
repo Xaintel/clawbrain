@@ -96,6 +96,15 @@ cd /srv/clawbrain/clawbrain-brain
 ./scripts/verify_brain_local.sh
 ```
 
+Para trabajar con repos reales fuera de `demo`:
+
+```bash
+export CLAWBRAIN_LOCAL_PROJECTS_ROOT="$HOME/Proyecto"
+./scripts/local_up.sh
+```
+
+`local_up.sh` actualiza policy local automaticamente para permitir esos repos.
+
 Apagado:
 
 ```bash

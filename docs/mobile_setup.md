@@ -54,11 +54,21 @@ git pull --ff-only
 Levantar Brain local:
 
 ```bash
+cd ~/Proyecto/clawbrain
+# Si quieres usar todos tus repos de ~/Proyecto dentro de /srv/projects:
+export CLAWBRAIN_LOCAL_PROJECTS_ROOT="$HOME/Proyecto"
+# Opcional: subir timeout para tareas codex largas
+export CLAWBRAIN_COMMAND_TIMEOUT_SEC=900
 ./scripts/local_up.sh
 ./scripts/verify_brain_local.sh
 ```
 
 API local por defecto: `http://127.0.0.1:18088`
+
+Notas importantes:
+- No uses URL con `/tree/mobile` al clonar (`git clone` solo acepta URL del repo).
+- Si `clawbrain` ya existe localmente, no vuelvas a clonar: entra al repo y haz `git fetch && git switch mobile`.
+- La policy local se regenera en cada `local_up.sh` segun los repos detectados.
 
 ## 4) Exponer Brain para usarlo desde tu PC de la pega
 
@@ -99,6 +109,16 @@ Smoke task remoto:
   --agent BuilderAgent \
   --command 'python3 -c "print(123)"' \
   --request-text 'smoke remoto'
+```
+
+Si exportaste `CLAWBRAIN_LOCAL_PROJECTS_ROOT="$HOME/Proyecto"` al levantar, tambien puedes usar repos reales por nombre:
+
+```bash
+./scripts/clawbrain-ide create-task \
+  --type codex \
+  --repo claw-jira-app \
+  --agent CoderAgent \
+  --request-text 'smoke codex en repo real'
 ```
 
 ## 6) MCP para Codex Chat en IDE (Cursor/VS Code)
