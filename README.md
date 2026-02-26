@@ -103,3 +103,8 @@ curl -fsS http://127.0.0.1:8088/health
 ## Operacion
 
 - Guia de implementacion y hardening: `docs/implementation.md`
+
+## Presentacion Tecnica
+
+- Resumen tecnico para presentacion (agentes, memoria, contexto y reparto de tareas):
+  - `docs/presentation_technical.md`
