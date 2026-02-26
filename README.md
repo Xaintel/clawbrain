@@ -88,6 +88,7 @@ curl -fsS http://127.0.0.1:8088/health
 
 - CLI local: `docs/usage_console.md`
 - Chat Codex en VS Code/Cursor por MCP: `docs/usage_codex_chat_mcp.md`
+  - Incluye ejemplos de prompts, archivo a editar (`.env.mcp`) y troubleshooting.
 
 ## Skills
 
