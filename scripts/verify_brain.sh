@@ -32,7 +32,7 @@ cat > /tmp/clawbrain_brain_task.json <<'JSON'
   "type": "command",
   "repo": "demo",
   "agent": "BuilderAgent",
-  "command": "python -c \"print(123)\"",
+  "command": "python3 -c \"print(123)\"",
   "request_text": "brain verify"
 }
 JSON
