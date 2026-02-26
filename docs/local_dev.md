@@ -37,6 +37,12 @@ cd /srv/clawbrain/clawbrain-brain
 - `local_up.sh` monta por defecto `~/.codex` dentro de los runners para reutilizar login de sesion.
 - Si no hay login ni key, los tasks `type=codex` pueden terminar en `failed/blocked`.
 
+## Rama mobile y uso remoto
+
+Para flujo completo en rama `mobile` (WSL + cliente remoto de pega + MCP), ver:
+
+- `docs/mobile_setup.md`
+
 ## MCP local
 
 Para `scripts/clawbrain-mcp-server-auto`, usa:

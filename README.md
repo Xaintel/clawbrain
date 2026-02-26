@@ -103,6 +103,7 @@ Apagado:
 ```
 
 Detalle completo: `docs/local_dev.md`.
+Guia completa para levantar y usar la rama `mobile`: `docs/mobile_setup.md`.
 
 ## Uso por consola e IDE
 
