@@ -3,7 +3,7 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 SRC_DIR="$SCRIPT_DIR/../config/templates"
-DST_DIR="/data/clawbrain/config"
+DST_DIR="${CLAWBRAIN_CONFIG_DIR:-/data/clawbrain/config}"
 FILES=("policy.yaml" "agents.yaml")
 FILES+=("apps.yaml")
 

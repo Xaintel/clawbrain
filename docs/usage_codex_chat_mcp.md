@@ -39,6 +39,13 @@ CLAWBRAIN_IDE_SERVER_URL=http://127.0.0.1:8088
 CLAWBRAIN_IDE_TOKEN_FILE=/data/clawbrain/secrets/api_token
 ```
 
+Modo local (`scripts/local_up.sh`):
+
+```bash
+CLAWBRAIN_IDE_SERVER_URL=http://127.0.0.1:18088
+CLAWBRAIN_IDE_TOKEN_FILE=/srv/clawbrain/clawbrain-brain/.local/data/secrets/api_token
+```
+
 ### 2) Comando MCP a usar en tu IDE
 
 Usa este comando en tu configuracion MCP del cliente:

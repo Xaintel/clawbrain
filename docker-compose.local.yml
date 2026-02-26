@@ -1,0 +1,68 @@
+services:
+  clawbrain-api:
+    ports:
+      - ${CLAWBRAIN_LOCAL_API_BIND:-127.0.0.1:18088}:8000
+    volumes:
+      - ${CLAWBRAIN_LOCAL_DATA_ROOT:-./.local/data}:/data/clawbrain
+
+  runner-coder:
+    image: clawbrain-runner:local-dev
+    build:
+      context: .
+      dockerfile: runner/Dockerfile.local
+    environment:
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+    volumes:
+      - ${CLAWBRAIN_LOCAL_REPO_ROOT:-.}:/srv/projects/clawbrain-brain
+      - ${CLAWBRAIN_LOCAL_DEMO_ROOT:-./.local/projects/demo}:/srv/projects/demo
+      - ${CLAWBRAIN_LOCAL_DATA_ROOT:-./.local/data}:/data/clawbrain
+
+  runner-builder:
+    image: clawbrain-runner:local-dev
+    environment:
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+    volumes:
+      - ${CLAWBRAIN_LOCAL_REPO_ROOT:-.}:/srv/projects/clawbrain-brain
+      - ${CLAWBRAIN_LOCAL_DEMO_ROOT:-./.local/projects/demo}:/srv/projects/demo
+      - ${CLAWBRAIN_LOCAL_DATA_ROOT:-./.local/data}:/data/clawbrain
+
+  runner-ux:
+    image: clawbrain-runner:local-dev
+    environment:
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+    volumes:
+      - ${CLAWBRAIN_LOCAL_REPO_ROOT:-.}:/srv/projects/clawbrain-brain
+      - ${CLAWBRAIN_LOCAL_DEMO_ROOT:-./.local/projects/demo}:/srv/projects/demo
+      - ${CLAWBRAIN_LOCAL_DATA_ROOT:-./.local/data}:/data/clawbrain
+
+  runner-mobile:
+    image: clawbrain-runner:local-dev
+    environment:
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+    volumes:
+      - ${CLAWBRAIN_LOCAL_REPO_ROOT:-.}:/srv/projects/clawbrain-brain
+      - ${CLAWBRAIN_LOCAL_DEMO_ROOT:-./.local/projects/demo}:/srv/projects/demo
+      - ${CLAWBRAIN_LOCAL_DATA_ROOT:-./.local/data}:/data/clawbrain
+
+  runner-ocr:
+    image: clawbrain-runner:local-dev
+    environment:
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+    volumes:
+      - ${CLAWBRAIN_LOCAL_REPO_ROOT:-.}:/srv/projects/clawbrain-brain
+      - ${CLAWBRAIN_LOCAL_DEMO_ROOT:-./.local/projects/demo}:/srv/projects/demo
+      - ${CLAWBRAIN_LOCAL_DATA_ROOT:-./.local/data}:/data/clawbrain
+
+  runner-qa:
+    image: clawbrain-runner:local-dev
+    environment:
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+    volumes:
+      - ${CLAWBRAIN_LOCAL_REPO_ROOT:-.}:/srv/projects/clawbrain-brain
+      - ${CLAWBRAIN_LOCAL_DEMO_ROOT:-./.local/projects/demo}:/srv/projects/demo
+      - ${CLAWBRAIN_LOCAL_DATA_ROOT:-./.local/data}:/data/clawbrain
+
+  agent-maintainer:
+    image: clawbrain-runner:local-dev
+    volumes:
+      - ${CLAWBRAIN_LOCAL_DATA_ROOT:-./.local/data}:/data/clawbrain

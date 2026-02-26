@@ -24,6 +24,7 @@ build/
 .DS_Store
 .idea/
 .vscode/
+.local/
 
 # Accidental recursive IDE client copies
 ide_client/ide_client/

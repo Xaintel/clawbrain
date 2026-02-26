@@ -84,6 +84,24 @@ curl -fsS http://127.0.0.1:8088/health
 ./scripts/verify_brain.sh
 ```
 
+## Modo local rapido (sin /data global)
+
+Para usar el Brain completamente local en tu maquina (datos en `./.local`):
+
+```bash
+cd /srv/clawbrain/clawbrain-brain
+./scripts/local_up.sh
+./scripts/verify_brain_local.sh
+```
+
+Apagado:
+
+```bash
+./scripts/local_down.sh
+```
+
+Detalle completo: `docs/local_dev.md`.
+
 ## Uso por consola e IDE
 
 - CLI local: `docs/usage_console.md`

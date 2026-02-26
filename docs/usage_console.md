@@ -9,6 +9,13 @@ export CLAWBRAIN_IDE_SERVER_URL="http://127.0.0.1:8088"
 export CLAWBRAIN_IDE_TOKEN="$(cat /data/clawbrain/secrets/api_token)"
 ```
 
+Modo local (`scripts/local_up.sh`):
+
+```bash
+export CLAWBRAIN_IDE_SERVER_URL="http://127.0.0.1:18088"
+export CLAWBRAIN_IDE_TOKEN="$(cat /srv/clawbrain/clawbrain-brain/.local/data/secrets/api_token)"
+```
+
 O guardar config local:
 
 ```bash
@@ -63,4 +70,3 @@ scripts/clawbrain-ide apply-patch-local \
   --patch /tmp/diff.patch \
   --repo /ruta/al/repo
 ```
-
