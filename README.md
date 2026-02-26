@@ -90,6 +90,8 @@ Para usar el Brain completamente local en tu maquina (datos en `./.local`):
 
 ```bash
 cd /srv/clawbrain/clawbrain-brain
+# Si ya usas login de Codex/ChatGPT en este host, se reutiliza automaticamente (~/.codex).
+# Alternativa: export OPENAI_API_KEY="..."
 ./scripts/local_up.sh
 ./scripts/verify_brain_local.sh
 ```

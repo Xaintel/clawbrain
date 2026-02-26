@@ -31,8 +31,11 @@ cd /srv/clawbrain/clawbrain-brain
 ## Notas de codex tasks
 
 - Esta variante usa `runner/Dockerfile.local` e instala `@openai/codex` dentro del runner.
-- Si quieres ejecutar tareas `type=codex`, exporta `OPENAI_API_KEY` antes de `local_up.sh`.
-- Sin credenciales, los tasks `type=codex` pueden terminar en `failed/blocked` segun el error del CLI.
+- Para auth puedes usar cualquiera de estas dos opciones:
+  - Login de sesion (recomendado si ya usas ChatGPT login): `codex login --device-auth` en el host.
+  - API key: exportar `OPENAI_API_KEY`.
+- `local_up.sh` monta por defecto `~/.codex` dentro de los runners para reutilizar login de sesion.
+- Si no hay login ni key, los tasks `type=codex` pueden terminar en `failed/blocked`.
 
 ## MCP local
 

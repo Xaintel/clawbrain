@@ -16,6 +16,7 @@ services:
       - ${CLAWBRAIN_LOCAL_REPO_ROOT:-.}:/srv/projects/clawbrain-brain
       - ${CLAWBRAIN_LOCAL_DEMO_ROOT:-./.local/projects/demo}:/srv/projects/demo
       - ${CLAWBRAIN_LOCAL_DATA_ROOT:-./.local/data}:/data/clawbrain
+      - ${CLAWBRAIN_LOCAL_CODEX_AUTH_DIR:-/tmp/.codex-missing}:/home/codex/.codex:ro
 
   runner-builder:
     image: clawbrain-runner:local-dev
@@ -25,6 +26,7 @@ services:
       - ${CLAWBRAIN_LOCAL_REPO_ROOT:-.}:/srv/projects/clawbrain-brain
       - ${CLAWBRAIN_LOCAL_DEMO_ROOT:-./.local/projects/demo}:/srv/projects/demo
       - ${CLAWBRAIN_LOCAL_DATA_ROOT:-./.local/data}:/data/clawbrain
+      - ${CLAWBRAIN_LOCAL_CODEX_AUTH_DIR:-/tmp/.codex-missing}:/home/builder/.codex:ro
 
   runner-ux:
     image: clawbrain-runner:local-dev
@@ -34,6 +36,7 @@ services:
       - ${CLAWBRAIN_LOCAL_REPO_ROOT:-.}:/srv/projects/clawbrain-brain
       - ${CLAWBRAIN_LOCAL_DEMO_ROOT:-./.local/projects/demo}:/srv/projects/demo
       - ${CLAWBRAIN_LOCAL_DATA_ROOT:-./.local/data}:/data/clawbrain
+      - ${CLAWBRAIN_LOCAL_CODEX_AUTH_DIR:-/tmp/.codex-missing}:/home/builder/.codex:ro
 
   runner-mobile:
     image: clawbrain-runner:local-dev
@@ -43,6 +46,7 @@ services:
       - ${CLAWBRAIN_LOCAL_REPO_ROOT:-.}:/srv/projects/clawbrain-brain
       - ${CLAWBRAIN_LOCAL_DEMO_ROOT:-./.local/projects/demo}:/srv/projects/demo
       - ${CLAWBRAIN_LOCAL_DATA_ROOT:-./.local/data}:/data/clawbrain
+      - ${CLAWBRAIN_LOCAL_CODEX_AUTH_DIR:-/tmp/.codex-missing}:/home/codex/.codex:ro
 
   runner-ocr:
     image: clawbrain-runner:local-dev
@@ -52,6 +56,7 @@ services:
       - ${CLAWBRAIN_LOCAL_REPO_ROOT:-.}:/srv/projects/clawbrain-brain
       - ${CLAWBRAIN_LOCAL_DEMO_ROOT:-./.local/projects/demo}:/srv/projects/demo
       - ${CLAWBRAIN_LOCAL_DATA_ROOT:-./.local/data}:/data/clawbrain
+      - ${CLAWBRAIN_LOCAL_CODEX_AUTH_DIR:-/tmp/.codex-missing}:/home/codex/.codex:ro
 
   runner-qa:
     image: clawbrain-runner:local-dev
@@ -61,6 +66,7 @@ services:
       - ${CLAWBRAIN_LOCAL_REPO_ROOT:-.}:/srv/projects/clawbrain-brain
       - ${CLAWBRAIN_LOCAL_DEMO_ROOT:-./.local/projects/demo}:/srv/projects/demo
       - ${CLAWBRAIN_LOCAL_DATA_ROOT:-./.local/data}:/data/clawbrain
+      - ${CLAWBRAIN_LOCAL_CODEX_AUTH_DIR:-/tmp/.codex-missing}:/home/builder/.codex:ro
 
   agent-maintainer:
     image: clawbrain-runner:local-dev
